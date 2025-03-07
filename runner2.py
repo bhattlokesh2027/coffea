@@ -24,7 +24,7 @@ if __name__=="__main__":
     #######################
     # Basic Configuration #
     #######################
-     
+
     # Fileset name
     fileset_name = 'fileset.json'
 
@@ -199,7 +199,7 @@ queue 1'''
     ###################
     # Run the process #
     ###################
-    
+
     # Basic configuration
     fileset_name = 'fileset.json'
     ## Load schema
@@ -246,7 +246,7 @@ queue 1'''
             (Out,) = computed
             Output.append(Out)
             if inputs.chunks > 1:
-                output_filename = output_file.strip('.coffea')+f'-chunk{i}'+'.coffea'
+                output_filename = output_file.split('.coffea')[0]+f'-chunk{i}'+'.coffea'
             else:
                 output_filename = output_file
             print("Saving the output to : " , output_filename)
