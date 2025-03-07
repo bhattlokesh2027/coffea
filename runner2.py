@@ -3,16 +3,14 @@
 # Email: prayag.yadav@cern.ch
 # Last Updated: 7 March 2025
 
-
 if __name__=="__main__":
     from coffea import util
     import argparse
-    from coffea.nanoevents import BaseSchema
     import numpy as np
     import yaml
     import os
+    import json
     import subprocess
-    from processor_mHrecoil import mHrecoil
     from coffea.dataset_tools import apply_to_fileset,max_chunks,preprocess
     from coffea.analysis_tools import Cutflow
     import dask
@@ -21,6 +19,26 @@ if __name__=="__main__":
     from dask.diagnostics import ProgressBar
     pgb = ProgressBar()
     pgb.register()
+
+
+    #######################
+    # Basic Configuration #
+    #######################
+     
+    # Fileset name
+    fileset_name = 'fileset.json'
+
+    ## Load schema
+    schema_name = 'NanoAODSchema'
+    from coffea.nanoevents import NanoAODSchema
+    schema = NanoAODSchema
+
+    ## Load the processor
+    processor_name = 'Zpeak'
+    args_kwargs = ''
+    from processor import Zpeak
+    processor = Zpeak()
+
 
     ##############################
     # Define the terminal inputs #
@@ -111,12 +129,12 @@ if __name__=="__main__":
 
         return out
 
-    def create_job_python_file(ecm, dataset_runnable, maxchunks,filename, output_file):
+    def create_job_python_file(dataset_runnable, maxchunks,filename, output_file):
         s = f'''
 from coffea import util
-from coffea.nanoevents import NanoAODSchema
+from coffea.nanoevents import {schema_name}
 import os
-from processor import Zpeak
+from processor import {processor_name}
 from coffea.dataset_tools import apply_to_fileset,max_chunks
 import dask
 
@@ -124,9 +142,9 @@ dataset_runnable = {dataset_runnable}
 maxchunks = {maxchunks}
 
 to_compute = apply_to_fileset(
-            Zpeak,
+            {processor_name}({args_kwargs}),
             max_chunks(dataset_runnable, maxchunks),
-            schemaclass=NanoAODSchema,
+            schemaclass={schema_name},
 )
 computed = dask.compute(to_compute)
 (Output,) = computed
@@ -247,11 +265,10 @@ queue 1'''
         for i in range(len(dataset_runnable)):
 
             if inputs.chunks > 1:
-                output_filename = output_file.strip('.coffea')+f'-chunk{i}'+'.coffea'
+                output_filename = output_file.split('.coffea')[0]+f'-chunk{i}'+'.coffea'
             else:
                 output_filename = output_file
             create_job_python_file(
-                ecm,
                 dataset_runnable[i],
                 inputs.maxchunks,
                 f'job_{i}.py',
