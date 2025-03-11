@@ -16,6 +16,8 @@ def get_hist(key, delayed = True):
     meta = hist_meta[key]
     if delayed:
         return hda.Hist.new.Regular(**meta).Double()
+    else:
+        return hist.Hist.new.Regular(**meta).Double()
 
 
 class Zpeak(ProcessorABC):
