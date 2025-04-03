@@ -8,6 +8,7 @@ with open('fileset.json', 'r') as file:
     fileset = json.load(file)
 
 print('Started execution ...')
+print("The fileset is ",fileset)
 
 dataset_runnable, dataset_updated = preprocess(
     fileset,

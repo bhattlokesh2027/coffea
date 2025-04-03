@@ -49,7 +49,7 @@ class Zpeak(ProcessorABC):
         onecut, cutflow, labels = event_selections.cutflow(*event_selections.names).yieldhist()
         
         return {
-            'Dataset':events.metadata['Dataset'],
+            #'Dataset':events.metadata['Dataset'],
             'Histograms':{
                 'Event Selections':{
                     'Onecut':onecut,

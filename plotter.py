@@ -128,7 +128,7 @@ all_plots = list(plot_meta.keys())
 
 def plot(list_of_keys, fig, ax):
     for key in list_of_keys:
-        print(f'Plotting : Z {key} : {plot_meta[key]['title']}')
+        print(f'Plotting : Z {key} : {plot_meta[key]["title"]}')
         hep.style.use(hep.styles.CMS)
         hep.histplot(
             [
