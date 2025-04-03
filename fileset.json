@@ -1,28 +1,16 @@
 {
   "WW": {
     "files": {
-      "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/WW_TuneCP5_13TeV-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/70000/2E8B8B37-E6F6-9E45-BEF3-4D89CCBCCA00.root": "Events",
-      "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/WW_TuneCP5_13TeV-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/70000/5799A6E1-3BA9-3048-915C-E5EDAAED2EE3.root": "Events",
-      "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/WW_TuneCP5_13TeV-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/70000/BAF56953-DC03-F848-BEC8-AF151D08FE3F.root": "Events"
-    },
-    "metadata": {
-      "Dataset": "WW_TuneCP5_13TeV-pythia8",
-      "Description": "Simulated dataset WW_TuneCP5_13TeV-pythia8 in NANOAODSIM format for 2016 collision data",
-      "Year": 2016,
-      "Source": "https://opendata.cern.ch/record/72696"
+      "/nfs/home/Lokesh/gray/simplest_coffea_analysis/2E8B8B37-E6F6-9E45-BEF3-4D89CCBCCA00.root": "Events",
+      "/nfs/home/Lokesh/gray/simplest_coffea_analysis/5799A6E1-3BA9-3048-915C-E5EDAAED2EE3.root": "Events",
+      "/nfs/home/Lokesh/gray/simplest_coffea_analysis/BAF56953-DC03-F848-BEC8-AF151D08FE3F.root": "Events"
     }
   },
   "ZZ": {
     "files": {
-      "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/ZZ_TuneCP5_13TeV-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/76A312CE-F9C3-5F4D-9093-F26D7C50BF61.root": "Events",
-      "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/ZZ_TuneCP5_13TeV-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/AA03EB34-E055-F44D-873B-1E114A0B09AA.root": "Events",
-      "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/ZZ_TuneCP5_13TeV-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/F1E42525-8476-1F47-B054-787155C4A948.root": "Events"
-    },
-    "metadata": {
-      "Dataset": "ZZ_TuneCP5_13TeV-pythia8",
-      "Description": "Simulated dataset ZZ_TuneCP5_13TeV-pythia8 in NANOAODSIM format for 2016 collision data",
-      "Year": 2016,
-      "Source": "https://opendata.cern.ch/record/75593"
+      "/nfs/home/Lokesh/gray/simplest_coffea_analysis/76A312CE-F9C3-5F4D-9093-F26D7C50BF61.root": "Events",
+      "/nfs/home/Lokesh/gray/simplest_coffea_analysis/AA03EB34-E055-F44D-873B-1E114A0B09AA.root": "Events",
+      "/nfs/home/Lokesh/gray/simplest_coffea_analysis/F1E42525-8476-1F47-B054-787155C4A948.root": "Events"
     }
   }
 }
